@@ -1,0 +1,18 @@
+** start of script.js **
+
+function mutation(arr) {
+  const base = arr[0].toLowerCase();
+  const objetivo = arr[1].toLowerCase();
+
+  for (let i = 0; i < objetivo.length; i++) {
+    if (base.indexOf(objetivo[i]) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]));
+
+** end of script.js **
+

@@ -1,0 +1,15 @@
+** start of script.js **
+
+function confirmEnding(cad1, cad2) {
+  if (cad1.slice(-cad2.length).includes(cad2)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(confirmEnding("Bastian", "n"));
+console.log(confirmEnding("Connor", "n"));
+
+** end of script.js **
+

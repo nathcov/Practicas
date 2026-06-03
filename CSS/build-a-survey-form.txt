@@ -1,0 +1,183 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <title>Encuesta</title>
+</head>
+
+<body>
+  <h1 id="title">Experiencia en la Universidad</h1>
+  <p id="description">Gracias por tomarte el tiempo de responder esta encuesta.</p>
+
+<form id="survey-form">
+
+  <div class="form-group">
+    <label for="name" id="name-label">Nombre:</label>
+    <input id="name" type="text" required placeholder="Ingresa tu nombre aqui">
+  </div>
+
+  <div class="form-group">
+    <label for="email" id="email-label">Correo eletrónico:</label>
+    <input id="email" type="email" required placeholder="Ingresa tu correo aqui">
+  </div>
+
+  <div class="form-group">
+    <label for="number" id="number-label">Edad:</label>
+    <input id="number" type="number" min="1" max="100" placeholder="Ingresa tu edad aqui">
+  </div>
+
+  <div class="form-group">
+    <label for="dropdown" id="dropdown-label">¿Cuál es su carrera?</label>
+    <select id="dropdown" required>
+      <option selected disabled>Selecciona aqui</option>
+      <option>Informática</option>
+      <option>Comunicación</option>
+      <option>Artes</option>
+      <option>Economía</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label id="radio-label">¿Cómo calificaría el nivel de las asignaturas?</label>
+    <label>
+      <input type="radio" name="nivel" class="radio" value="excelente" checked> Excelente
+    </label>
+    <label>
+      <input type="radio" name="nivel" class="radio" value="bueno"> Bueno
+    </label>
+    <label>
+      <input type="radio" name="nivel" class="radio" value="regular"> Regular
+    </label>
+    <label>
+      <input type="radio" name="nivel" class="radio" value="malo"> Malo
+    </label>
+  <label>
+      <input type="radio" name="nivel" class="radio" value="horrible"> Horrible
+    </label>
+  </div>
+
+<div class="form-group">
+  <label id="checkbox-label">¿Qué le gustaria mejorar sobre la universidad?</label>
+  <label>
+    <input type="checkbox" class="checkbox" value="comedor" checked> El espacio en el comedor
+  </label>
+  <label>
+    <input type="checkbox" class="checkbox" value="verdes"> Más espacios verdes
+  </label>
+  <label>
+    <input type="checkbox" class="checkbox" value="salones"> Salones mejor distribuidos
+  </label>
+</div>
+
+  <div class="form-group">
+    <label id="text-label">¿Tienes algún comentario o sugerencia?</label>
+    <textarea placeholder="Escribe aqui..."></textarea>
+  </div>
+
+  <button type="submit" id="submit">Enviar</button>
+
+</form>
+</body>
+
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+body {
+  box-sizing:border-box;
+  padding:0;
+  margin:0;
+  background-image: linear-gradient(rgba(4, 142, 170, 0.7), rgba(4, 142, 170, 0.7)),url(https://images.squarespace-cdn.com/content/v1/53aadf1de4b0a0a817640cca/1518806856906-6736W0LCFK2L7NSRLTSU/Estudiante+de+universidadcon+una+laptop);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  height:1100px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align:center;
+  color:white;
+  margin-top:40px;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+p {
+  text-align:center;
+  color:white;
+  font-style:italic;
+  margin-top:-20px;
+  margin-bottom:40px;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+label, input, p, textarea, button, select{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+#survey-form { 
+  width:500px;
+  margin:0 auto;
+  padding:50px 30px;
+  border-radius:5px;
+  background: rgba(4, 60, 151, 0.703);
+  color:white;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.7);
+}
+
+.form-group {
+  margin-bottom:30px;
+  display:flex;
+  flex-direction:column;
+}
+
+#name-label, #email-label, #number-label, #dropdown-label, #radio-label, #checkbox-label,#text-label {
+  margin-bottom:10px;
+  font-weight:bold;
+}
+
+#name, #email, #number, select, textarea {
+  border-radius:3px;
+  border:none;
+  height:30px;
+  background-color:white;
+  padding:0 5px;
+}
+
+#name:focus, #email:focus, #number:focus, select:focus, textarea:focus {
+outline:none;
+border:2px solid rgb(214, 125, 0);
+}
+
+textarea {
+  max-width:490px;
+  min-height:100px;
+  max-height:100px;
+}
+
+button {
+  width:100%;
+  background-color:gray;
+  border:none;
+  border-radius:3px;
+  color:white;
+  font-weight:bold;
+  height:30px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: rgb(214, 125, 0);
+}
+
+** end of styles.css **
+

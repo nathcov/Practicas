@@ -1,0 +1,72 @@
+** start of script.js **
+
+const questions = [];
+const obj1 = {
+  category: "Geografía",
+  question: "¿Cuál es el río más largo del mundo?",
+  choices: ["Río Nilo", "Río Amazonas", "Río Mississippi"],
+  answer: "Río Amazonas" 
+};
+
+const obj2 = {
+  category: "Ciencia",
+  question: "¿Cuál es el elemento químico con el símbolo Au?",
+  choices: ["Plata", "Cobre", "Oro"],
+  answer: "Oro"
+};
+
+const obj3 = {
+  category: "Arte",
+  question: "¿Quién pintó la famosa obra 'La noche estrellada'?",
+  choices: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci"],
+  answer: "Vincent van Gogh"
+};
+
+const obj4 = {
+  category: "Historia",
+  question: "¿En qué año llegó el hombre a la Luna por primera vez?",
+  choices: ["1965", "1969", "1972"],
+  answer: "1969"
+}
+
+const obj5 = {
+  category: "Tecnología",
+  question: "¿Qué significa la sigla 'CPU'?",
+  choices: ["Control Process Unit", "Central Processing Unit", "Computer Personal Unit"],
+  answer: "Central Processing Unit"
+}
+
+questions.push(obj1, obj2, obj3, obj4, obj5);
+
+function getRandomQuestion(arr) {
+  const numazar = Math.floor(Math.random() * arr.length);
+  return arr[numazar];
+}
+
+const objeto = getRandomQuestion(questions);
+const question = objeto.question;
+const choiceArray = objeto.choices;
+
+console.log(question);
+
+function getRandomComputerChoice(choiceArray) {
+  const numazar = Math.floor(Math.random() * choiceArray.length)
+  return choiceArray[numazar];
+}
+
+const choice = getRandomComputerChoice(choiceArray);
+console.log(choice);
+
+function getResults(objeto, choice) {
+  const resp = objeto.answer;
+  if (resp === choice) {
+    return "The computer's choice is correct!";
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${resp}`
+  }
+}
+
+console.log(getResults(objeto, choice));
+
+** end of script.js **
+

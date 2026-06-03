@@ -1,0 +1,15 @@
+** start of script.js **
+
+function truthCheck(collection, pre) {
+  // Usamos .every() para preguntarle a cada objeto de la colección:
+  // "¿Tienes la propiedad 'pre' con un valor verdadero?"
+  return collection.every(objeto => {
+    // Accedemos a la propiedad usando corchetes [] porque es una variable
+    return objeto[pre]; 
+  });
+}
+
+truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot");
+
+** end of script.js **
+

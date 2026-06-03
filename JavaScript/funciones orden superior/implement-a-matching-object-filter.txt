@@ -1,0 +1,35 @@
+** start of script.js **
+
+function whatIsInAName(collection, source) {
+  // 1. EL INVENTARIO DE REQUISITOS
+  // Creamos un arreglo vacío para guardar los nombres de las propiedades que buscamos.
+  let propSource = [];
+  
+  // Usamos for...in para entrar al objeto 'source'. 
+  // Si source es { last: "Capulet" }, 'llave' será "last".
+  for (let llave in source) {
+    propSource.push(llave); // Guardamos "last" en nuestro arreglo propSource.
+  }
+
+  // 2. EL FILTRADO PRINCIPAL
+  // 'filter' recorre cada objeto (item) de la colección (Romeo, Tybalt, etc.).
+  // Queremos que devuelva solo los que cumplan la condición de adentro.
+  return collection.filter(item => {
+    
+    // 3. LA PRUEBA DE "TODO O NADA"
+    // 'every' revisa TODAS las llaves que guardamos en propSource (ej: ["last"]).
+    // Solo devuelve 'true' si la comparación de abajo es cierta para cada llave.
+    return propSource.every(llave => {
+      
+      // 4. LA COMPARACIÓN DINÁMICA
+      // Comparamos el valor del objeto actual con el valor de la fuente.
+      // Usamos [llave] porque el nombre de la propiedad está en una variable.
+      // Ejemplo: ¿item["last"] (Capulet) es igual a source["last"] (Capulet)?
+      return item[llave] === source[llave];
+    });
+    
+  });
+}
+
+** end of script.js **
+

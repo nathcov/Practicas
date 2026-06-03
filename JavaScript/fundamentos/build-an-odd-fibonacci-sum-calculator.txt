@@ -1,0 +1,32 @@
+** start of script.js **
+
+function sumFibs(num) {
+  let anterior = 0;
+  let actual = 1;
+  let sumaImpares = 0;
+
+  // Mientras el número actual de Fibonacci sea menor o igual al límite dado
+  while (actual <= num) {
+    
+    // Verificamos si el número actual es impar
+    // Un número es impar si el resto de dividirlo por 2 no es 0
+    if (actual % 2 !== 0) {
+      sumaImpares += actual;
+    }
+
+    // Calculamos el siguiente número de la secuencia
+    // La lógica es: el nuevo es la suma de los dos anteriores
+    let siguiente = anterior + actual;
+    
+    // Desplazamos los valores para la siguiente vuelta:
+    // El que era 'actual' ahora es el 'anterior'
+    // El 'siguiente' ahora es el 'actual'
+    anterior = actual;
+    actual = siguiente;
+  }
+
+  return sumaImpares;
+}
+
+** end of script.js **
+
