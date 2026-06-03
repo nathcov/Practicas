@@ -1,8 +1,0 @@
-** start of script.js **
-
-function destroyer (arr, ...arg) {
-  return arr.filter(item => !arg.includes(item));
-}
-
-** end of script.js **
-
