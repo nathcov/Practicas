@@ -1,0 +1,34 @@
+** start of script.js **
+
+function convertHTML(str) {
+  // 1. Definimos el objeto con las equivalencias
+  const entidades = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+  };
+
+  // 2. Creamos una variable para construir la nueva cadena
+  let resultado = "";
+
+  // 3. Recorremos la cadena original carácter por carácter
+  for (let i = 0; i < str.length; i++) {
+    let caracterActual = str[i];
+
+    // 4. Si el carácter existe en nuestro diccionario, añadimos la entidad
+    if (entidades[caracterActual]) {
+      resultado += entidades[caracterActual];
+    } else {
+      // Si no es un carácter especial, lo añadimos tal cual
+      resultado += caracterActual;
+    }
+  }
+
+  // 5. Devolvemos la cadena transformada
+  return resultado;
+}
+
+** end of script.js **
+

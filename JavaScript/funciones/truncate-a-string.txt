@@ -1,0 +1,14 @@
+** start of script.js **
+
+function truncateString (cad, num) {
+  if (cad.length > num) {
+    return cad.slice(0, num) + "...";
+  } else {
+    return cad;
+  }
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+
+** end of script.js **
+
