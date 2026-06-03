@@ -1,0 +1,19 @@
+** start of script.js **
+
+function findLongestWordLength(sentence) {
+  const words = sentence.split(" ");
+  let longestWord = 0;
+  for (const word of words) {
+    if (word.length > longestWord) {
+      longestWord = word.length;
+    }
+  }
+  return longestWord;
+}
+
+console.log(findLongestWordLength("What if we try a super-long word such as otorhinolaryngology"));
+
+
+
+** end of script.js **
+

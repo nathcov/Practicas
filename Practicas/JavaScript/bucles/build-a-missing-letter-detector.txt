@@ -1,0 +1,17 @@
+** start of script.js **
+
+function fearNotLetter(str) {
+  let codigoEsperado = str.charCodeAt(0);
+
+  for (let i = 0; i < str.length; i++) {
+    if (str.charCodeAt(i) !== codigoEsperado) {
+      return String.fromCharCode(codigoEsperado);
+    }
+    codigoEsperado++;
+  }
+
+  return undefined;
+}
+
+** end of script.js **
+

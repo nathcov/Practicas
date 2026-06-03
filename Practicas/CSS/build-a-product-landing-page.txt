@@ -1,0 +1,384 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&display=swap" rel="stylesheet">
+  </head>
+
+<body>
+
+  <header id="header">
+    <img src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png" alt="logo" id="header-img">
+
+    <nav id="nav-bar">
+      <a class="nav-link" href="#features">Features</a><a class="nav-link" href="#videoo">Video</a>
+      <a class="nav-link" href="#products">Productos</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section id="formulario">
+      <h1>Trombones de Alta Calidad</h1>
+      <form id="form" action="https://www.freecodecamp.org/email-submit">
+        <input type="email" name="email" placeholder="Ingresa tu email" id="email" required>
+        <input type="submit" id="submit">
+      </form>
+    </section>
+
+    <section id="features">
+
+      <div class="feature">
+        <span class="icon material-icons">thumb_up</span>
+        <div class="text-icon">
+          <h2>Premium Materials</h2>
+        <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="icon material-icons">arrow_right_alt</span>
+        <div class="text-icon">
+          <h2>Fast Shipping</h2>
+        <p>We make sure you receive your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="icon material-icons">grade</span>
+        <div class="text-icon">
+          <h2>Quality Assurance</h2>
+        <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+        </div>
+      </div>
+      
+    </section>
+
+    <section id="videoo">
+      <iframe id="video"
+  src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&controls=0&showinfo=0"
+  frameborder="0"
+  width="500"
+  height="300"
+  allowfullscreen
+      ></iframe>
+    </section>
+
+    <section id="products">
+      <div class="card">
+        <h3>Tenor Trombone</h3>
+        <p class="price">$600</p>
+        <p class="description">
+          Good for beginners.
+Excellent sound quality.
+Great for Jazz Bands.
+Nice and shiny.
+        </p>
+        <button type="submit">Seleccionar</button>
+      </div>
+      <div class="card">
+        <h3>Tenor Trombone</h3>
+        <p class="price">$900</p>
+        <p class="description">Sound quality .<br>
+Best for professionals.
+Absolutely stunning.
+Durable and long lasting.</p>
+        <button type="submit">Seleccionar</button>
+      </div>
+      <div class="card">
+        <h3>Tenor Trombone</h3>
+        <p class="price">$1200</p>
+        <p class="description">Plays similar to a Trumpet.
+Great for Jazz Bands.
+Beautiful in sound and appearance.
+Just amazing.</p>
+        <button type="submit">Seleccionar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#">Privacidad</a>
+    <a href="#">Terminos</a>
+    <a href="#">Contacto</a>
+    <p>Copyrigth 2025. Original Trombones</p>
+  </footer>
+
+</body>
+
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+* {
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family:'Playfair Display', serif;
+}
+
+p, span, a {
+  font-family: 'Open Sans', serif;
+}
+
+#header {
+  display:flex;
+  width:100%;
+  padding:10px;
+  position:fixed;
+  background-color:white;
+  z-index:999;
+justify-content:space-between;
+flex-wrap:wrap;
+border-bottom:1px solid darkolivegreen;
+}
+
+#header-img {
+  width:300px;
+}
+
+#nav-bar {
+  display:flex;
+  align-items:center;
+  width:50%;
+  justify-content:space-evenly;
+  flex-wrap:wrap;
+}
+
+#nav-bar a{
+  text-decoration:none;
+  color:darkolivegreen;
+  padding:10px;
+  transition: 0.1s ease;
+}
+
+#nav-bar a:hover {
+  background-color:darkolivegreen;
+  border-radius:2px;
+  color:white;
+}
+
+.main {
+  padding-top:110px;
+  width:90%;
+  margin:0 auto;
+  margin-bottom:50px;
+}
+
+#formulario {
+  text-align:center;
+  font-size:1.5rem;
+}
+
+input {
+  display:block;
+  margin:15px auto;
+}
+
+#email {
+  width:50%;
+  padding:5px;
+  background-color:ivory;
+  border:1px solid darkolivegreen;
+  border-radius:2px;
+}
+
+#email:focus {
+  outline:1.5px solid darkolivegreen;
+}
+
+#submit {
+  width:20%;
+  height:30px;
+  font-size:1rem;
+  background-color:darkolivegreen;
+  border:none;
+  color:ivory;
+  border-radius:2px;
+}
+
+#submit:hover {
+  background-color:rgb(126, 159, 70);
+}
+
+#features {
+  margin:100px 0;
+}
+
+#features p{
+  font-size:0.9rem;
+}
+
+.feature {
+  display:flex;
+  margin:40px 0;
+  gap:40px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+ color:darkolivegreen;
+ font-size:2.5rem;
+}
+
+iframe {
+  display:block;
+  margin:100px auto;
+}
+
+#products {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.card {
+  display:flex;
+  flex-direction:column;
+  width:30%;
+  border:1px solid darkolivegreen;
+  text-align:center;
+  height:240px;
+  border-radius:2px;
+}
+
+
+
+.card h3 {
+  font-size:1.3rem;
+  background-color:rgb(179, 177, 177);
+  height:35px;
+  padding-top:5px;
+}
+
+.card .price {
+  position:relative;
+  font-size:1.1rem;
+  top:20px;
+}
+
+.card .description {
+  position:relative;
+  top:25px;
+  font-size:0.8rem;
+  margin:10px;
+}
+
+.card button {
+  position:relative;
+  top:40px;
+  width:70%;
+  margin:0 auto;
+  height:30px;
+  font-size:1rem;
+  background-color:darkolivegreen;
+  border:none;
+  color:ivory;
+  border-radius:2px;
+}
+
+.card button:hover {
+  background-color:rgb(126, 159, 70);
+}
+
+footer {
+  padding-top:50px;
+  text-align:center;
+background-color:darkolivegreen;
+  height:150px;
+}
+
+footer a{
+  text-decoration:none;
+  color:linen;
+  margin:10px;
+  font-size:0.9rem;
+}
+
+footer a:hover {
+  text-decoration:underline;
+}
+
+footer p {
+  color:rgba(211, 206, 206, 0.606);
+  font-size:0.8rem;
+}
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+  #header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #header-img {
+    width: 200px; /* más pequeño en móvil */
+    margin-bottom: 10px;
+  }
+
+  #nav-bar {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* FORMULARIO */
+  #email {
+    width: 90%; /* ocupa casi todo el ancho */
+  }
+
+  #submit {
+    width: 50%; /* botón más grande */
+  }
+
+  /* FEATURES */
+  .feature {
+    flex-direction: column;  /* apila icono y texto */
+    text-align: center;
+    gap: 10px;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  /* VIDEO */
+  iframe {
+    width: 100%;     /* ocupa todo el ancho disponible */
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* PRODUCTS */
+  #products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;     /* ocupa casi todo el ancho */
+    height: auto;   /* que se ajuste al contenido */
+    padding-bottom: 20px;
+  }
+
+  .card button {
+    top: 20px; /* ajustamos espaciado */
+  }
+}
+
+** end of styles.css **
+

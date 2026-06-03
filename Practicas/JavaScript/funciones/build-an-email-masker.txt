@@ -1,0 +1,11 @@
+** start of script.js **
+
+function maskEmail(email) {
+  const recorte = email.slice(1, email.indexOf("@") - 1);
+  return email.replace(recorte, "*".repeat(recorte.length));
+}
+const email = "apple.pie@example.com";
+console.log(maskEmail(email));
+
+** end of script.js **
+

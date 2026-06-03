@@ -1,0 +1,21 @@
+** start of script.js **
+
+function largestOfAll(arreglo) {
+  let resultados = [];
+  for (let i = 0; i < arreglo.length; i++) {
+    let mayorActual = arreglo[i][0];
+    for (let j = 0; j < arreglo[i].length; j++) {
+      if (mayorActual < arreglo[i][j]) {
+        mayorActual = arreglo[i][j];
+        
+      }
+    }
+    resultados.push(mayorActual);
+  }
+  return resultados;
+}
+
+console.log(largestOfAll([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
+
+** end of script.js **
+
