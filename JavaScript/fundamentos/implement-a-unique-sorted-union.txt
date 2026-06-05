@@ -1,0 +1,27 @@
+** start of script.js **
+
+function uniteUnique() {
+  // 1. Usamos "arguments" para capturar todos los arreglos que nos manden
+  // (es un objeto especial que contiene todo lo que entra a la función)
+  let resultado = [];
+
+  // Ciclo 1: Recorre cada uno de los arreglos recibidos
+  for (let i = 0; i < arguments.length; i++) {
+    let arregloActual = arguments[i];
+
+    // Ciclo 2: Recorre cada número dentro del arreglo actual
+    for (let j = 0; j < arregloActual.length; j++) {
+      let numero = arregloActual[j];
+
+      // Si el número NO está todavía en nuestro resultado, lo guardamos
+      if (!resultado.includes(numero)) {
+        resultado.push(numero);
+      }
+    }
+  }
+
+  return resultado;
+}
+
+** end of script.js **
+

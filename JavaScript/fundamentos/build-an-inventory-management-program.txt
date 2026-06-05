@@ -1,0 +1,61 @@
+** start of script.js **
+
+// 1. Vector vacío para almacenar los productos
+let inventory = [];
+
+// 2. Función para encontrar el índice del producto
+function findProductIndex(productName) {
+  const nameLower = productName.toLowerCase();
+  // Buscamos la posición del objeto cuyo nombre coincida
+  return inventory.findIndex(item => item.name === nameLower);
+}
+
+// 3. Función para añadir o actualizar productos
+function addProduct(product) {
+  // Aseguramos que el nombre esté en minúsculas antes de procesar
+  product.name = product.name.toLowerCase();
+  
+  const index = findProductIndex(product.name);
+
+  if (index !== -1) {
+    // Si ya existe, sumamos la cantidad
+    inventory[index].quantity += product.quantity;
+    console.log(product.name + " quantity updated");
+  } else {
+    // Si no existe, lo añadimos al vector
+    inventory.push(product);
+    console.log(product.name + " added to inventory");
+  }
+}
+
+// 4. Función para eliminar o restar piezas
+function removeProduct(name, quantity) {
+  const nameLower = name.toLowerCase();
+  const index = findProductIndex(nameLower);
+
+  // Caso: El producto no existe
+  if (index === -1) {
+    console.log(nameLower + " not found");
+    return;
+  }
+
+  const product = inventory[index];
+
+  // Caso: No hay suficiente cantidad para restar
+  if (quantity > product.quantity) {
+    console.log("Not enough " + product.name + " available, remaining pieces: " + product.quantity);
+  } else {
+    // Caso: Resta exitosa
+    product.quantity -= quantity;
+
+    // Si la cantidad llega a cero, eliminamos el producto del vector
+    if (product.quantity === 0) {
+      inventory.splice(index, 1);
+    }
+
+    console.log("Remaining " + product.name + " pieces: " + (product.quantity >= 0 ? product.quantity : 0));
+  }
+}
+
+** end of script.js **
+

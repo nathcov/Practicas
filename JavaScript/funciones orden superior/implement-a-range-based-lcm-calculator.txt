@@ -1,0 +1,39 @@
+** start of script.js **
+
+function smallestCommons(arr) {
+  // 1. Identificar el mínimo y el máximo (por si vienen desordenados)
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+
+  // 2. Crear el arreglo con el rango completo [1, 2, 3, 4, 5]
+  const rango = [];
+  for (let i = min; i <= max; i++) {
+    rango.push(i);
+  }
+
+  // 3. Función para hallar el Máximo Común Divisor (MCD)
+  // Usamos el Algoritmo de Euclides (es el más rápido)
+  const mcd = (a, b) => {
+    while (b !== 0) {
+      let temporal = b;
+      b = a % b;
+      a = temporal;
+    }
+    return a;
+  };
+
+  // 4. Función para hallar el Mínimo Común Múltiplo (MCM) de dos números
+  // Fórmula: (a * b) / MCD(a, b)
+  const mcm = (a, b) => (a * b) / mcd(a, b);
+
+  // 5. Aplicar el MCM a todo el rango usando .reduce()
+  // Vamos calculando el MCM del primero con el segundo, 
+  // luego el resultado con el tercero, y así sucesivamente.
+  return rango.reduce((acumulador, actual) => mcm(acumulador, actual));
+}
+
+// Ejemplo de prueba:
+console.log(smallestCommons([1, 5])); // Debería devolver 60
+
+** end of script.js **
+

@@ -1,0 +1,19 @@
+** start of script.js **
+
+function pyramid(char, num, bool) {
+  let filas = [];
+  for (let i = 1; i <= num; i++){
+    let espacios = " ".repeat(num - i);
+    let simbolos = char.repeat(2 * i - 1);
+    let fila = espacios + simbolos;
+    filas.push(fila);
+  }
+  if (bool) {
+    filas.reverse(); 
+  };
+
+  return "\n" + filas.join("\n") + "\n";
+}
+
+** end of script.js **
+

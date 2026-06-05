@@ -1,0 +1,49 @@
+** start of script.js **
+
+function getAverage(puntajes) {
+  let promedio = 0;
+  for (let i = 0; i < puntajes.length; i++) {
+    promedio += puntajes[i];
+  }
+  return promedio / puntajes.length;
+}
+
+function getGrade(puntaje) {
+  if (puntaje == 100) {
+    return "A+";
+  } else if (puntaje >= 90) {
+    return "A";
+  } else if (puntaje >= 80) {
+    return "B";
+  } else if (puntaje >= 70) {
+    return "C";
+  } else if (puntaje >= 60) {
+    return "D";
+  } else {
+    return "F";
+  }
+}
+
+function hasPassingGrade(puntaje) {
+  let letra = getGrade(puntaje);
+  if (letra != "F") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function studentMsg(puntajes, puntaje) {
+    let promedio = getAverage(puntajes);
+    let nota = getGrade(puntaje);
+  if (hasPassingGrade(puntaje)) {
+    return "Class average: " + promedio + ". Your grade: " + nota + ". You passed the course.";
+  } else {
+    return "Class average: " + promedio + ". Your grade: " + nota + ". You failed the course.";
+  }
+}
+
+console.log(studentMsg([56, 23, 89, 42, 75, 11, 68, 34, 91, 19], 100))
+
+** end of script.js **
+

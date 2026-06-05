@@ -1,0 +1,76 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blog-post-card">
+        <img class="post-img" src="https://cdn.freecodecamp.org/curriculum/labs/cover-photo.jpg" alt="computadora">
+        <div class="post-content">
+            <h2 class="post-title">Titulo</h2>
+            <p class="post-excerpt">Este es un texto que resume el contenido de mi blog. Deberia verse bonito.</p>
+            <a class="read-more" href="google.com">Read More</a>
+        </div>
+    </div>
+</body>
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+body {
+  font-family: sans-serif;
+}
+
+.blog-post-card {
+  background-color: white;
+  border-radius:20px;
+  width:300px;
+  text-align:center;
+  margin: auto;
+  box-shadow: 5px 5px 15px grey;
+}
+
+.post-img {
+ width:100%;
+ border-bottom: 5px solid brown;
+ border-radius:10px;
+}
+
+.post-content {
+  padding:20px;
+}
+
+.post-title {
+  color: black;
+  margin:20px;
+  margin-top:-0.7px;
+}
+
+.post-excerpt {
+  color:grey;
+  margin:10px;
+}
+
+.read-more {
+  color:white;
+  text-decoration:none;
+  background-color:brown;
+  margin:10px;
+  padding:10px;
+  border-radius:5px;
+  display: inline-block;
+}
+
+.read-more:hover {
+  background-color: orange;
+}
+
+** end of styles.css **
+

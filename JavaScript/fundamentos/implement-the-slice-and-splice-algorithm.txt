@@ -1,0 +1,11 @@
+** start of script.js **
+
+function frankenSplice(arr1, arr2, indice) {
+  let copiaArr2 = [...arr2];
+  copiaArr2.splice(indice, 0, ...arr1);
+  return copiaArr2;
+}
+
+
+** end of script.js **
+

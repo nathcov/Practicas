@@ -1,0 +1,160 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Build a Set of Football Team Cards
+    </title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 class="title">Team stats</h1>
+    <main>
+      <div class="team-stats">
+        <p>Team: <span id="team"></span></p>
+        <p>Year: <span id="year"></span></p>
+        <p>Head coach: <span id="head-coach"></span></p>
+      </div>
+      <label class="options-label" for="players">Filter Teammates:</label>
+      <select name="players" id="players">
+        <option value="all">All Players</option>
+        <option value="forward">Position Forward</option>
+        <option value="midfielder">Position Midfielder</option>
+        <option value="defender">Position Defender</option>
+        <option value="goalkeeper">Position Goalkeeper</option>
+      </select>
+      <div class="cards" id="player-cards"></div>
+    </main>
+    <footer>&copy; freeCodeCamp</footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+
+** end of index.html **
+
+** start of styles.css **
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-grey: #0a0a23;
+  --light-grey: #f5f6f7;
+  --white: #ffffff;
+  --black: #000;
+}
+
+body {
+  background-color: var(--dark-grey);
+  text-align: center;
+  padding: 10px;
+}
+
+.title,
+.options-label,
+.team-stats,
+footer {
+  color: var(--white);
+}
+
+.title {
+  margin: 1.3rem 0;
+}
+
+.team-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 1.3rem;
+  margin: 1.2rem 0;
+}
+
+.options-label {
+  font-size: 1.2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-card {
+  background-color: var(--light-grey);
+  padding: 1.3rem;
+  margin: 1.2rem;
+  width: 300px;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .team-stats {
+    flex-direction: column;
+  }
+}
+
+
+** end of styles.css **
+
+** start of script.js **
+
+const footballTeam = {
+  team: "Real Madrid",
+  year: 2024,
+  headCoach: "Carlo Ancelotti",
+  players: [
+    { name: "Thibaut Courtois", position: "goalkeeper", isCaptain: false },
+    { name: "Dani Carvajal", position: "defender", isCaptain: true },
+    { name: "Luka Modrić", position: "midfielder", isCaptain: false },
+    { name: "Vinícius Júnior", position: "forward", isCaptain: false }
+  ]
+};
+
+const selectContainer = document.querySelector("#players");
+const productsContainer = document.querySelector("#player-cards");
+
+// Mostrar información del equipo
+document.getElementById("head-coach").textContent = footballTeam.headCoach;
+document.getElementById("team").textContent = footballTeam.team;
+document.getElementById("year").textContent = footballTeam.year;
+
+function playerCards(playerPosition = "all") {
+  const filteredPlayers =
+    playerPosition === "all"
+      ? footballTeam.players
+      : footballTeam.players.filter(
+          ({ position }) => position === playerPosition
+        );
+
+  return filteredPlayers
+    .map(({ name, position, isCaptain }) => {
+      return `
+          <div class="player-card">
+            <h2>${isCaptain ? "(Captain) " : ""}${name}</h2>
+            <p>Position: ${position}</p>
+          </div>
+        `;
+    })
+    .join("");
+}
+
+// Carga inicial de todos los jugadores
+productsContainer.innerHTML = playerCards("all");
+
+selectContainer.addEventListener("change", (e) => {
+  productsContainer.innerHTML = playerCards(e.target.value);
+});
+
+** end of script.js **
+
