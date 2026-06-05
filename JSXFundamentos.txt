@@ -1,0 +1,65 @@
+1. Definición y Uso Básico
+JSX permite combinar HTML con JavaScript en una misma línea de código, lo que facilita visualizar la estructura de la interfaz
+. Se puede asignar directamente a variables o constantes
+
+// Ejemplo: Asignar un elemento JSX a una constante
+const elemento = <h1>Hola, este es un título en JSX</h1>;
+
+2. Diferencia entre Elementos y Componentes
+Los elementos son las unidades más pequeñas (etiquetas básicas de HTML) y se escriben siempre en minúsculas
+. Los componentes son estructuras más complejas creadas por el usuario y su nombre debe comenzar siempre con mayúscula
+
+// 'div' es un elemento (minúscula), 'Testimonio' es un componente (mayúscula)
+<div>
+  <Testimonio /> 
+</div>
+
+3. Atributos Especiales (className y htmlFor)
+Dado que JSX es JavaScript, algunas palabras reservadas de JS no pueden usarse como atributos de HTML. El caso más importante es el atributo class, que en JSX debe escribirse como className
+. Asimismo, for cambia a htmlFor
+
+// Uso de className en lugar de class
+<div className='contenedor-principal'>
+  <label htmlFor='nombre'>Nombre:</label>
+  <input id='nombre' type='text' />
+</div>
+
+4. Estilos en Línea (Objetos y camelCase)
+El atributo style no recibe una cadena de texto, sino un objeto JavaScript
+. Las propiedades de CSS deben escribirse en formato camelCase (sin guiones y con la primera letra de la segunda palabra en mayúscula)
+
+// Estilo definido como un objeto
+const estiloCaja = {
+  backgroundColor: 'blue', // En CSS sería background-color
+  fontSize: '20px'         // En CSS sería font-size
+};
+
+<div style={estiloCaja}>Caja con estilo</div>;
+
+5. Inserción de JavaScript (Las Llaves { })
+Para incluir cualquier expresión válida de JavaScript (variables, operaciones matemáticas o funciones) dentro del marcado JSX, se deben utilizar llaves
+
+const nombre = 'Estefanía';
+const duplicar = (n) => n * 2;
+
+// Uso de llaves para insertar lógica y variables
+<p>Hola, {nombre}</p>
+<p>El doble de 5 es: {duplicar(5)}</p>
+
+6. Etiquetas de Cierre Automático (Self-closing)
+En JSX, los elementos que no tienen contenido (como imágenes o saltos de línea) o componentes que se usan sin hijos, deben cerrarse siempre con una barra inclinada antes del paréntesis angular final
+
+// Elementos que se cierran solos
+<img src='logo.png' alt='Logo' /> 
+<br />
+<MiComponente />
+
+7. Estructuras Anidadas y Fragmentos
+Los elementos pueden anidarse para formar estructuras complejas
+.Sin embargo, un componente debe retornar un único elemento padre. Si no se desea agregar un div extra al DOM, se pueden usar fragmentos (etiquetas vacías)
+
+// Uso de fragmentos para agrupar elementos sin añadir nodos extra
+<>
+  <h1>Título</h1>
+  <p>Párrafo anidado</p>
+</>
